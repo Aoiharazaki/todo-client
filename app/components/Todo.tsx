@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { TodoType } from '../types';
 import { useTodos } from '../hooks/useTodos';
-import { todo } from 'node:test';
 import { API_URL } from '@/constants/url';
 
 type TodoProps = {
@@ -13,7 +12,7 @@ type TodoProps = {
 const Todo = ({ todo }: TodoProps) => {
   const [isEditing, setIsEditing] = useState<boolean>(false); 
   const [editedTitle, setEditedTitle] = useState<string>(todo.title); 
-  const {todos,isLoading,error,mutate} = useTodos();
+  const {todos,mutate} = useTodos();
 
 
   const handleEdit = async () => {
